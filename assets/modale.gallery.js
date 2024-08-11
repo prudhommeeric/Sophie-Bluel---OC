@@ -1,5 +1,5 @@
 // Fonction pour fermer toutes les modales
-function closeModals () {
+function closeModals() {
 	const modalMain = document.querySelector('.modal-main')
 	const modalAdd = document.querySelector('.modal-2')
 
@@ -8,7 +8,7 @@ function closeModals () {
 }
 
 // Fonction pour initialiser les événements des modales
-function initModal () {
+function initModal() {
 	const openModalButton = document.querySelector('.open-modal')
 	const closeModalButton = document.querySelector('.close-modal')
 	const addWorksButton = document.querySelector('.add-works')
@@ -54,7 +54,7 @@ function initModal () {
 }
 
 // Fonction pour récupérer les données de la galerie via une API
-async function fetchGalerieModalData () {
+async function fetchGalerieModalData() {
 	const url = 'http://localhost:5678/api/works'
 	try {
 		const response = await fetch(url)
@@ -67,7 +67,7 @@ async function fetchGalerieModalData () {
 }
 
 // Fonction pour mettre à jour la galerie dans la modale
-async function mettreAJourGalerieModal () {
+async function mettreAJourGalerieModal() {
 	const data = await fetchGalerieModalData()
 	const galleryModal = document.querySelector('.gallery-modal')
 
@@ -103,12 +103,12 @@ async function mettreAJourGalerieModal () {
 }
 
 // Fonction pour supprimer un work via l'API
-async function deleteWork (id) {
+async function deleteWork(id) {
 	const url = `http://localhost:5678/api/works/${id}`
 	const token = localStorage.getItem('authToken')
 
 	if (!token) {
-		console.error('Jeton non trouvé dans le localStorage.')
+		console.error('Jeton non trouvé dans le localStorage..')
 		return false
 	}
 
